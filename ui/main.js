@@ -4,7 +4,7 @@ var element = document.getElementById('main-text');
 element.innerHTML="New value";
 //to move the image on clicking on it
 var img = document.getElementById('madi');
-marginleft=0;
+var marginleft=0;
 function moveright(){
     marginleft=marginleft+1;
     img.style.marginleft=marginleft+'px';
