@@ -1,16 +1,21 @@
-console.log('Loaded!');
-//to change the content of the webpage
-var element = document.getElementById('main-text');
-element.innerHTML="New value";
+//counter code
+var button = document.getElementById('counter');
 
-
-//to move the image on clicking on it
-var img = document.getElementById('madi');
-var marginleft=0;
-function moveRight(){
-    marginleft = marginleft + 1;
-    img.style.marginLeft = marginleft + 'px' ;
-}
-img.onclick = function () {
-      var interval = setInterval(moveRight, 50);
+button.onclick = function(){
+    //create a request object
+   var request = new XMLHttpRequest(); 
+   
+   //captuer the response and store it in a variable
+   request.onreadystatecange = function(){
+     if(request.readystateState ===XMLHttpRequest.DONE){
+         //take some action
+         if(Request.status === 200){
+             var counter = request.responseText;
+             var span = document.getElementById('count');
+             span.innerHTML = counter.toString();
+         }
+     }  
+   };
+    request.open('GET','http://pratikkumarparida.imad.hasura-app.io/counter',true);
+    request.send(null);
 };
