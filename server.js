@@ -14,9 +14,12 @@ app.get("/counter",function(req,res){
     counter=counter+1;
     res.send(counter.toString());
 });
-app.get('/articleone',function (req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'articleone.html'));
-});
+app.get('/:articlename',function (req,res){
+    //articlename ==articleone
+    //articles[articleName]=={}content object for article one
+    var articlename= req.params.aticlename;
+    res.send(createTemplate(articles[articlename]));
+}
 
 
 app.get('/ui/style.css', function (req, res) {
@@ -28,6 +31,15 @@ app.get('/ui/main.js', function (req, res) {
 
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+});
+vr names=[];
+app.get('/submit-name/:name',function(req,res){
+   varname=req.params.name;
+   
+   names.push(name);
+   //JSON Javascript Object Notation
+   res.send(JSON.stringify(names));
+    
 });
 
 
