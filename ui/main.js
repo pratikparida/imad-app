@@ -20,3 +20,11 @@ button.onclick = function(){
   request.open('GET','http://pratikkumarparida1112.imad.hasura-app.io/counter',true);
   request.send(null);
 };
+//submit name
+var nameinput = document.getElementById('name');
+var name = nameInput.value;
+submit = document.getElementById('submit_btn');
+submit.onclick = function(){
+    //make a request and send names
+    //capture the list of names and render as a list
+};
