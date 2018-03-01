@@ -14,11 +14,11 @@ app.get("/counter",function(req,res){
     counter=counter+1;
     res.send(counter.toString());
 });
-app.get('/:articlename',function (req,res){
+app.get('/:articleName',function (req,res){
     //articlename ==articleone
     //articles[articleName]=={}content object for article one
-    var articlename= req.params.aticlename;
-    res.send(createTemplate(articles[articlename]));
+    var articleName= req.params.articleName;
+    res.send(createTemplate(articles[articleName]));
 }
 
 
@@ -32,9 +32,10 @@ app.get('/ui/main.js', function (req, res) {
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
+
 var names=[];
 app.get('/submit-name/:name',function(req,res){
-   varname=req.params.name;
+   var name=req.params.name;
    
    names.push(name);
    //JSON Javascript Object Notation
