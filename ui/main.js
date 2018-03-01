@@ -5,7 +5,7 @@ button.onclick = function(){
     //create a request object
    var request = new XMLHttpRequest(); 
    
-   //captuer the response and store it in a variable
+   //capture the response and store it in a variable
    request.onreadystatecange = function(){
      if(request.readyState ===XMLHttpRequest.DONE){
          //take some action
@@ -13,6 +13,10 @@ button.onclick = function(){
              var counter = request.responseText;
              var span = document.getElementById('count');
              span.innerHTML = counter.toString();
+         //to render the variable in correct span
+         counter = counter+1;
+         var span = document.getElementById('count');
+         span.innerHTML=counter.toString();
          }
      }  
    };
