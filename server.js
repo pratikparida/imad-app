@@ -20,6 +20,10 @@ app.get('/:articlename',function (req,res){
    res.send(createTemplate(articles[articleName]));
     
 });
+app.get('/test-db' function(req,res){
+   //make a select request
+   //return a response with a result
+});
 
  app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
