@@ -25,7 +25,7 @@ app.get('/test-db',function(req,res){
    //return a response with the results
     Pool query('SELECT * FROM TEST' function(err,result){
         if(err){
-            res.staus(500).send(err.toString());
+            res.status(500).send(err.toString());
         }
         else
         {
